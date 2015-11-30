@@ -38,3 +38,7 @@ Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   page.all('table#movies tr').count.should == Movie.all.count + 1
 end
+
+Then(/^the director of "(.*?)" should be "(.*?)"$/) do |arg1, arg2|
+  Movie.find_by(name: arg1).director == arg2
+end
