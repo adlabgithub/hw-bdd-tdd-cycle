@@ -40,5 +40,5 @@ Then /I should see all the movies/ do
 end
 
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |arg1, arg2|
-  Movie.find_by(name: arg1).director == arg2
+  Movie.find_by(title: arg1).director == arg2
 end
